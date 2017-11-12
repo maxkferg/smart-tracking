@@ -4,6 +4,8 @@ project(tracker)
 
 set(CMAKE_BUILD_TYPE Debug)
 
+set (CMAKE_CXX_STANDARD 11)
+
 find_package( OpenCV REQUIRED )
 
 set(SRC_PATH source )

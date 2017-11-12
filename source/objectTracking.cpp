@@ -1,6 +1,4 @@
-//Written by  Kyle Hounslow 2013
-
-// modified by: Ahmad Kaifi, Hassan Althobaiti
+//Written by Max Ferguson
 
 //Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software")
 //, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -19,6 +17,7 @@
 
 
 #include "Object.h"
+#include "Database.h"
 
 // definitions
 #define TRACK_RED true
@@ -256,6 +255,8 @@ int main(int argc, char* argv[])
 	//all of our operations will be performed within this loop
 	waitKey(1000);
 	clock_t startTime = clock();
+	int iterations;
+	int successful;
 
 	while(1){
 		//store image to matrix
@@ -265,6 +266,8 @@ int main(int argc, char* argv[])
 
   		if( !src.data )
   		{ return -1; }
+
+		iterations++;
 
 		//convert frame from BGR to HSV colorspace
 		cvtColor(cameraFeed,HSV,COLOR_BGR2HSV);
@@ -289,8 +292,7 @@ int main(int argc, char* argv[])
 	  		createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold);
 	  		/// Show the image
 				trackFilteredObject(threshold,HSV,cameraFeed,objects);
-		}
-		else{
+		} else {
 			//create some temp fruit objects so that
 			//we can use their member functions/information
 			Object blue("blue"), yellow("yellow"), red("red"), green("green");
@@ -326,9 +328,13 @@ int main(int argc, char* argv[])
 				trackFilteredObject(green,threshold,HSV,cameraFeed,greenObjects);
 			}
 			if (greenObjects.size()==1 && redObjects.size()==1){
+				updateDatabase(greenObjects.at(0), redObjects.at(0));
+				successful++;
+			}
+			if (iterations%30 == 0){
 				clock_t endTime = clock();
 				double seconds = (endTime - startTime) / (double) CLOCKS_PER_SEC;
-				printf("Time elapsed %.3f\n", seconds);
+				printf("Success (%i/%i): Time elapsed for 30 frames %.3f\n", successful, iterations, seconds);
 			}
 		}
 		//show frames
