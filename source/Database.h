@@ -1,7 +1,6 @@
 // Standard include files
 #pragma once
 #include <opencv2/opencv.hpp>
-#include <opencv2/tracking.hpp>
 #include <cpp_redis/cpp_redis>
 #include <iostream>
 #include <math.h>
