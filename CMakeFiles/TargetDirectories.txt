@@ -1,3 +1,0 @@
-/home/maxkferg/MultiObjectTrackingBasedOnColor/CMakeFiles/edit_cache.dir
-/home/maxkferg/MultiObjectTrackingBasedOnColor/CMakeFiles/rebuild_cache.dir
-/home/maxkferg/MultiObjectTrackingBasedOnColor/CMakeFiles/tracker.dir
