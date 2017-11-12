@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/maxkferg/MultiObjectTrackingBasedOnColor/source/Object.cpp
+Object.h
+/home/maxkferg/MultiObjectTrackingBasedOnColor/source/Object.h
+
+/home/maxkferg/MultiObjectTrackingBasedOnColor/source/Object.h
+string
+-
+stdio.h
+-
+opencv2/opencv.hpp
+-
+
+/home/maxkferg/MultiObjectTrackingBasedOnColor/source/multipleObjectTracking.cpp
+sstream
+-
+string
+-
+iostream
+-
+vector
+-
+opencv2/opencv.hpp
+-
+Object.h
+/home/maxkferg/MultiObjectTrackingBasedOnColor/source/Object.h
+
