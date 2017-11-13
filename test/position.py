@@ -7,7 +7,7 @@ Usage: python3 track.py
 import redis
 import time
 import json
-from .config import *
+from config import *
 
 db = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 

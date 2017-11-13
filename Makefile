@@ -123,6 +123,33 @@ tracker/fast:
 	$(MAKE) -f CMakeFiles/tracker.dir/build.make CMakeFiles/tracker.dir/build
 .PHONY : tracker/fast
 
+source/Database.o: source/Database.cpp.o
+
+.PHONY : source/Database.o
+
+# target to build an object file
+source/Database.cpp.o:
+	$(MAKE) -f CMakeFiles/tracker.dir/build.make CMakeFiles/tracker.dir/source/Database.cpp.o
+.PHONY : source/Database.cpp.o
+
+source/Database.i: source/Database.cpp.i
+
+.PHONY : source/Database.i
+
+# target to preprocess a source file
+source/Database.cpp.i:
+	$(MAKE) -f CMakeFiles/tracker.dir/build.make CMakeFiles/tracker.dir/source/Database.cpp.i
+.PHONY : source/Database.cpp.i
+
+source/Database.s: source/Database.cpp.s
+
+.PHONY : source/Database.s
+
+# target to generate assembly for a file
+source/Database.cpp.s:
+	$(MAKE) -f CMakeFiles/tracker.dir/build.make CMakeFiles/tracker.dir/source/Database.cpp.s
+.PHONY : source/Database.cpp.s
+
 source/Object.o: source/Object.cpp.o
 
 .PHONY : source/Object.o
@@ -186,6 +213,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tracker"
+	@echo "... source/Database.o"
+	@echo "... source/Database.i"
+	@echo "... source/Database.s"
 	@echo "... source/Object.o"
 	@echo "... source/Object.i"
 	@echo "... source/Object.s"
